@@ -1,0 +1,65 @@
+﻿@page
+@model EstadoCuentaMVC.Pages.Tarjetas.TransaccionesModel
+@{
+    ViewData["Title"] = "Transacciones";
+}
+<link rel="stylesheet" href="/css/Transacciones.css">
+
+<h2>Transacciones</h2>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+@if (TempData["InfoMessage"] != null)
+{
+    <div class="alert alert-info">
+        @TempData["InfoMessage"]
+    </div>
+}
+
+@if (Model.Tarjeta != null)
+{
+    <div>
+        <p><strong>Nombre del Cliente:</strong> @Model.Tarjeta.NombreTitular</p>
+        <p><strong>Número de Tarjeta:</strong> @Model.Tarjeta.NumeroTarjeta</p>
+    </div>
+}
+
+@if (Model.Transacciones != null && Model.Transacciones.Count > 0)
+{
+    <table class="table table-bordered">
+        <thead class="table-light">
+            <tr>
+                <th>Fecha</th>
+                <th>Descripción</th>
+                <th>Tipo</th>
+                <th>Monto</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var transaccion in Model.Transacciones)
+            {
+                <tr>
+                    <td>@transaccion.FechaMovimiento.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@transaccion.Descripcion</td>
+                    <td>@transaccion.TipoMovimiento</td>
+                    <td>@transaccion.Monto.ToString("C")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <form method="post" asp-page-handler="ExportToExcel">
+        <input type="hidden" name="id" value="@Model.Tarjeta.IdTarjeta" />
+        <button type="submit" class="btn btn-primary">Exportar a Excel</button>
+    </form>
+}
+else
+{
+    <div class="alert alert-info">
+        No hay transacciones disponibles para esta tarjeta.
+    </div>
+}

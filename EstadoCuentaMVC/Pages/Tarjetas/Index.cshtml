@@ -1,0 +1,107 @@
+﻿@page
+@model EstadoCuentaMVC.Pages.Tarjetas.IndexModel
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<link href="~/css/Index.css" rel="stylesheet">
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <label for="mostrar">Mostrar:</label>
+            <form method="get" style="display: inline;">
+             <select id="mostrar" name="PageSize" class="form-select" onchange="this.form.submit()" style="width: auto; display: inline-block;">
+    <option value="10" selected="@(Model.PageSize == 10)">10</option>
+    <option value="20" selected="@(Model.PageSize == 20)">20</option>
+    <option value="30" selected="@(Model.PageSize == 30)">30</option>
+</select>
+ resultados
+                <input type="hidden" name="SearchQuery" value="@Model.SearchQuery" />
+            </form>
+        </div>
+        <form method="get" class="input-group" style="width: 300px;">
+            <input type="text" class="form-control" placeholder="Buscar..." asp-for="SearchQuery" />
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+    </div>
+
+    <table class="table table-bordered">
+        <thead class="table-light">
+            <tr>
+                <th>Número de Tarjeta</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Tarjetas.Any())
+            {
+                @foreach (var tarjeta in Model.Tarjetas)
+                {
+                    <tr>
+                        <td>@tarjeta.NumeroTarjeta</td>
+                        <td>@tarjeta.Nombre</td>
+                        <td>@tarjeta.Apellido</td>
+                        <td>
+                            <a class="btn btn-primary btn-sm" asp-page="./EstadoCuenta" asp-route-id="@tarjeta.IdTarjeta">Estado de Cuenta</a>
+                            <a class="btn btn-success btn-sm" asp-page="./RegistrarCompra" asp-route-id="@tarjeta.IdTarjeta">Registrar Compra</a>
+                            <a class="btn btn-info btn-sm" asp-page="./RegistrarPago" asp-route-id="@tarjeta.IdTarjeta">Registrar Pago</a>
+                            <a class="btn btn-secondary btn-sm" asp-page="./Transacciones" asp-route-id="@tarjeta.IdTarjeta">Transacciones</a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="4" class="text-center">No hay tarjetas disponibles.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+   <div class="d-flex justify-content-between align-items-center mt-3">
+    <!-- Mostrar resultados -->
+    <div class="results-info">
+        Mostrar @((Model.CurrentPage - 1) * Model.PageSize + 1) a @Math.Min(Model.CurrentPage * Model.PageSize, Model.TotalResults) de @Model.TotalResults resultados
+    </div>
+
+    <!-- Paginación -->
+    <nav>
+        <ul class="pagination mb-0">
+            @if (Model.CurrentPage > 1)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="?page=@(Model.CurrentPage - 1)&PageSize=@Model.PageSize">Anterior</a>
+                </li>
+            }
+
+            @for (int i = 1; i <= Model.TotalPages; i++)
+            {
+                if (i == Model.CurrentPage)
+                {
+                    <li class="page-item active">
+                        <span class="page-link">@i</span>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="?page=@i&PageSize=@Model.PageSize">@i</a>
+                    </li>
+                }
+            }
+
+            @if (Model.CurrentPage < Model.TotalPages)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="?page=@(Model.CurrentPage + 1)&PageSize=@Model.PageSize">Siguiente</a>
+                </li>
+            }
+        </ul>
+    </nav>
+</div>
+
+
+</div>

@@ -1,0 +1,64 @@
+﻿@page "{id:int}"
+@model EstadoCuentaMVC.Pages.Tarjetas.EstadoCuentaModel
+@{
+    ViewData["Title"] = "Estado de Cuenta";
+}
+<link rel="stylesheet" href="/css/EstadoCuenta.css">
+
+<div class="container">
+    <div class="header">
+        <img src="/images/logo.png" alt="Banco Atlántida" class="logo">
+        <h1>Estado de Cuenta de TC</h1>
+    </div>
+
+    <div class="card-details">
+        <div class="details">
+            <p><strong>Nombre del Cliente:</strong> @Model.Tarjeta.NombreTitular</p>
+            <p><strong>Número de Tarjeta de Crédito:</strong> @Model.Tarjeta.NumeroTarjeta</p>
+        </div>
+        <div class="summary">
+            <p><strong>Saldo Actual:</strong> $@Model.Tarjeta.SaldoUtilizado.ToString("F2")</p>
+            <p><strong>Límite:</strong> $@Model.Tarjeta.LimiteCredito.ToString("F2")</p>
+            <p><strong>Interés Bonificable:</strong> $@Model.InteresBonificable.ToString("F2")</p>
+            <p><strong>Saldo Disponible:</strong> $@Model.Tarjeta.SaldoDisponible.ToString("F2")</p>
+        </div>
+    </div>
+
+    <h3>Compras Realizadas</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Número de Autorización</th>
+                <th>Fecha</th>
+                <th>Descripción</th>
+                <th>Monto</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var compra in Model.Movimientos)
+            {
+                <tr>
+                    <td>@compra.IdMovimiento</td>
+                    <td>@compra.FechaMovimiento.ToShortDateString()</td>
+                    <td>@compra.Descripcion</td>
+                    <td>$@compra.Monto.ToString("F2")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="totals">
+        <div>
+            <p><strong>Compras Diciembre:</strong> $@Model.TotalComprasMesAnterior.ToString("F2")</p>
+        </div>
+        <div>
+            <p><strong>Compras Enero:</strong> $@Model.TotalComprasMesActual.ToString("F2")</p>
+        </div>
+    </div>
+
+    <div class="calculations">
+        <p><strong>Cuota Mínima a Pagar:</strong> $@Model.CuotaMinimaPagar.ToString("F2")</p>
+        <p><strong>Monto Total a Pagar:</strong> $@Model.MontoTotalPagar.ToString("F2")</p>
+        <p><strong>Pago de Contado con Intereses:</strong> $@Model.MontoTotalConIntereses.ToString("F2")</p>
+    </div>
+</div>

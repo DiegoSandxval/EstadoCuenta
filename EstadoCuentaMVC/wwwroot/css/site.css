@@ -1,0 +1,45 @@
+﻿/* General styles for body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+/* Header styles */
+header {
+    background-color: #d40000;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px solid #940000;
+}
+
+    header .logo {
+        display: flex;
+        align-items: center;
+    }
+
+        header .logo img {
+            max-height: 40px;
+            margin-right: 10px;
+        }
+
+    header h1 {
+        margin: 0;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+    }
+
+/* Container for all pages */
+.container {
+    width: 90%;
+    margin: 20px auto;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}

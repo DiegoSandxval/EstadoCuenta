@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\EstadoCuentaMVC.props" />
+</Project>

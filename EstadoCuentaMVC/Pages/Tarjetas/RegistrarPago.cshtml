@@ -1,0 +1,60 @@
+﻿@page
+@model EstadoCuentaMVC.Pages.Tarjetas.RegistrarPagoModel
+@{
+    ViewData["Title"] = "Registrar Pago";
+}
+<link rel="stylesheet" href="/css/RegistrarPago.css">
+
+<h2>Registrar Pago</h2>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+@if (Model.Tarjeta != null)
+{
+    <p><strong>Nombre del Cliente:</strong> @Model.Tarjeta.NombreTitular</p>
+    <p><strong>Número de Tarjeta:</strong> @Model.Tarjeta.NumeroTarjeta</p>
+}
+else
+{
+    <div class="alert alert-danger">
+        No se encontraron datos para esta tarjeta.
+    </div>
+}
+
+<form method="post">
+    <!-- Campo oculto para IdTarjeta -->
+    <input type="hidden" asp-for="Movimiento.IdTarjeta" />
+
+    <div class="form-group">
+        <label asp-for="Movimiento.FechaMovimiento"></label>
+        <input asp-for="Movimiento.FechaMovimiento" class="form-control" type="datetime-local" />
+        <span asp-validation-for="Movimiento.FechaMovimiento" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Movimiento.Descripcion"></label>
+        <input asp-for="Movimiento.Descripcion" class="form-control" />
+        <span asp-validation-for="Movimiento.Descripcion" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Movimiento.Monto"></label>
+        <input asp-for="Movimiento.Monto" class="form-control" type="number" step="0.01" />
+        <span asp-validation-for="Movimiento.Monto" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Registrar</button>
+    <a asp-page="./Index" class="btn btn-secondary">Cancelar</a>
+</form>

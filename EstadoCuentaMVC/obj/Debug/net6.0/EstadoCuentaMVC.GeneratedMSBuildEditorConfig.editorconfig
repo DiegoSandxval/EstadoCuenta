@@ -1,0 +1,61 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = EstadoCuentaMVC
+build_property.RootNamespace = EstadoCuentaMVC
+build_property.ProjectDir = C:\Users\sandoval\OneDrive\Escritorio\Proyecto\EstadoCuentaSolution\EstadoCuentaMVC\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\sandoval\OneDrive\Escritorio\Proyecto\EstadoCuentaSolution\EstadoCuentaMVC
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/sandoval/OneDrive/Escritorio/Proyecto/EstadoCuentaSolution/EstadoCuentaMVC/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sandoval/OneDrive/Escritorio/Proyecto/EstadoCuentaSolution/EstadoCuentaMVC/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sandoval/OneDrive/Escritorio/Proyecto/EstadoCuentaSolution/EstadoCuentaMVC/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sandoval/OneDrive/Escritorio/Proyecto/EstadoCuentaSolution/EstadoCuentaMVC/Pages/Tarjetas/EstadoCuenta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFyamV0YXNcRXN0YWRvQ3VlbnRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sandoval/OneDrive/Escritorio/Proyecto/EstadoCuentaSolution/EstadoCuentaMVC/Pages/Tarjetas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFyamV0YXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sandoval/OneDrive/Escritorio/Proyecto/EstadoCuentaSolution/EstadoCuentaMVC/Pages/Tarjetas/RegistrarCompra.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFyamV0YXNcUmVnaXN0cmFyQ29tcHJhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sandoval/OneDrive/Escritorio/Proyecto/EstadoCuentaSolution/EstadoCuentaMVC/Pages/Tarjetas/RegistrarPago.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFyamV0YXNcUmVnaXN0cmFyUGFnby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sandoval/OneDrive/Escritorio/Proyecto/EstadoCuentaSolution/EstadoCuentaMVC/Pages/Tarjetas/Transacciones.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFyamV0YXNcVHJhbnNhY2Npb25lcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sandoval/OneDrive/Escritorio/Proyecto/EstadoCuentaSolution/EstadoCuentaMVC/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sandoval/OneDrive/Escritorio/Proyecto/EstadoCuentaSolution/EstadoCuentaMVC/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sandoval/OneDrive/Escritorio/Proyecto/EstadoCuentaSolution/EstadoCuentaMVC/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-8j8g4q9p8l
