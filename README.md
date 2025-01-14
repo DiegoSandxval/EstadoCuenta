@@ -14,5 +14,6 @@ Frontend: Razor Pages
 Backend: ASP.NET Core 6.0
 Base de Datos: SQL Server
 y diferentes librerias solicitadas
+Ademas maneja la descarga de datos en un documento Excel
 Instrucciones de Uso
 Para ejecutar este proyecto de forma local, sigue las instrucciones detalladas en la sección "Cómo Probar la Aplicación". Todo está diseñado para funcionar sin necesidad de configuraciones externas complejas.****
